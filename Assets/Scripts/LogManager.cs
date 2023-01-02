@@ -8,6 +8,7 @@ namespace ARLogger {
     public class LogManager : Singleton<LogManager>
     {   
         public GameObject debugCanvas;
+        public TextMeshProUGUI debugTitleText;
         public TextMeshProUGUI debugAreaText;
         public bool enableDebug = false;
         public int maxLines = 15;
@@ -19,6 +20,7 @@ namespace ARLogger {
         {
             debugCanvas.SetActive(enableDebug);
             debugAreaText.text = "";
+            debugTitleText.text = "Logger";
             enabled = enableDebug;
         }
 
@@ -64,19 +66,26 @@ namespace ARLogger {
         {
             Debug.Log($"Button pressed {presses} times!");
 
+
+            // Pause
             if (isLogging)
             {
+                debugTitleText.text = "Paused";
                 isLogging = false;
                 return;
             }
-                
+
+            // Close
             if (presses < 3)
             {
                 debugCanvas.SetActive(false);
                 presses++;
             } 
+
+            // Open
             else
             {
+                debugTitleText.text = "Logger";
                 debugCanvas.SetActive(true);
                 isLogging = true;
                 presses = -1;

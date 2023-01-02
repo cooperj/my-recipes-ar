@@ -903,6 +903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugCanvas: {fileID: 134475495}
+  debugTitleText: {fileID: 134035758}
   debugAreaText: {fileID: 832707546}
   enableDebug: 0
   maxLines: 28
