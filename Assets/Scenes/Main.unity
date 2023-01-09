@@ -123,50 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &86543766
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 86543767}
-  - component: {fileID: 86543768}
-  m_Layer: 0
-  m_Name: LogTester
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &86543767
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 86543766}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 150.35571, y: 1143.8091, z: -50.679443}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &86543768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 86543766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03de08a65883a446eb0217a179f001e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &134035756
 GameObject:
   m_ObjectHideFlags: 0
@@ -965,6 +921,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6395f5f460d01489182f08bfb2394a3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arRaycastManager: {fileID: 630168209}
+  arCamera: {fileID: 1195168882}
+  lasagnaPrefab: {fileID: 2884221902057482211, guid: 40a2a0815687b494cbcdb38a295bb0dd, type: 3}
 --- !u!4 &1059036088
 Transform:
   m_ObjectHideFlags: 0
@@ -978,7 +937,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1079201632
 GameObject:
