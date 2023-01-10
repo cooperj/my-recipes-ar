@@ -1058,8 +1058,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arRaycastManager: {fileID: 630168209}
   arCamera: {fileID: 1195168882}
-  lasagnaPrefab: {fileID: 2884221902057482211, guid: 40a2a0815687b494cbcdb38a295bb0dd, type: 3}
   infoPanel: {fileID: 9145224851848901535}
+  foods:
+  - {fileID: 11400000, guid: 5ead10ea557bd43e985b3f62accc76a1, type: 2}
+  foodIndex: 0
 --- !u!4 &1059036088
 Transform:
   m_ObjectHideFlags: 0
@@ -2676,10 +2678,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccfad6250cd244454a54d6bec176c9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Title: Lasanga
-  Blurb: Garfield is a funny cat lol, he likes lasanga but not the cat called nermal!
-    Funny little guy :D
-  RecipeUrl: https://www.bbcgoodfood.com/recipes/lasagne
+  Title: 
+  Blurb: 
+  RecipeUrl: 
+  isOpen: 0
   uiTitle: {fileID: 4006223922699696917}
   uiBlurb: {fileID: 4245478689561688821}
   InfoPanel: {fileID: 6138792765882300205}

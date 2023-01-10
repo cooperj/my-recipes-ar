@@ -11,10 +11,12 @@ public class FoodManager : MonoBehaviour
     public ARRaycastManager arRaycastManager;
     //Assign camera – should work with main tag but sometimes has issues 
     public Camera arCamera;
-    public GameObject lasagnaPrefab;
     public FoodItemInfoPanelController infoPanel;
 
     private RaycastHit lastHit;
+
+    public List<Food> foods;
+    public int foodIndex = 0;
 
     void Update()
     {
@@ -71,10 +73,14 @@ public class FoodManager : MonoBehaviour
             // end touchcount condition
         }
     }
-
+    
     private void CreateFood(Vector3 position)
     {
-        Instantiate(lasagnaPrefab, position, Quaternion.identity);
+        // Spawns the prefab from the ScriptableObj so we can have more than one food type.
+        Food f = foods[foodIndex];
+        Instantiate(f.Prefab, position, Quaternion.identity);
+        infoPanel.ChangeInfo(f.Title, f.Blurb, f.RecipeUrl);
+
         LogManager.Instance.LogInfo("Food Item Created");
     }
 

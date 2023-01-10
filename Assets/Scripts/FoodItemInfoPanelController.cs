@@ -55,7 +55,7 @@ public class FoodItemInfoPanelController : MonoBehaviour
     {
         LogManager.Instance.LogInfo("Info Panel Closed");
         InfoPanel.SetActive(false);
-        isOpen = false;
+        StartCoroutine(ReEnableUserInput());
     }
 
     public void ClickDelete()
@@ -63,4 +63,11 @@ public class FoodItemInfoPanelController : MonoBehaviour
         foodMgr.DeleteFood();
         Close();
     }
+
+    IEnumerator ReEnableUserInput()
+    {
+        yield return new WaitForSeconds(1);
+        isOpen = false;
+    }
+        
 } 
