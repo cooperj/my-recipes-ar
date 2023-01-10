@@ -12,6 +12,9 @@ public class FoodManager : MonoBehaviour
     //Assign camera – should work with main tag but sometimes has issues 
     public Camera arCamera;
     public GameObject lasagnaPrefab;
+    public FoodItemInfoPanelController infoPanel;
+
+    private RaycastHit lastHit;
 
     void Update()
     {
@@ -23,9 +26,14 @@ public class FoodManager : MonoBehaviour
             //touch.phase condition
             if (touch.phase == TouchPhase.Ended)
             {
+                // Handle No Touch
                 if (Input.touchCount == 1)
                 {
                     LogManager.Instance.LogInfo("Touched Screen");
+
+                    // Handle the Screen being touched from the info menu
+                    if (infoPanel.isOpen)
+                        return;
 
                     //Raycast Planes
                     if (arRaycastManager.Raycast(touch.position, arRaycastHits))
@@ -37,8 +45,9 @@ public class FoodManager : MonoBehaviour
                         {
                             if (hit.collider.tag == "FoodItem")
                             {
+                                lastHit = hit;
                                 LogManager.Instance.LogInfo("Food Item Touched");
-                                DeleteFood(hit.collider.gameObject);
+                                infoPanel.Open();
                                 return;
                             }
                             else
@@ -69,10 +78,15 @@ public class FoodManager : MonoBehaviour
         LogManager.Instance.LogInfo("Food Item Created");
     }
 
-    private void DeleteFood(GameObject lasagnaPrefab)
+    public void DeleteFood()
+    {
+        DeleteFood(lastHit);
+    }
+
+    public void DeleteFood(RaycastHit foodRaycast)
     {
         Handheld.Vibrate();
-        Destroy(lasagnaPrefab);
+        Destroy(foodRaycast.collider.gameObject);
         LogManager.Instance.LogInfo("Food Item Deleted");
     }
 }
