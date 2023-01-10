@@ -18,6 +18,8 @@ public class FoodManager : MonoBehaviour
     public List<Food> foods;
     public int foodIndex = 0;
 
+    public bool firstObjectPlaced = false;
+
     void Update()
     {
         // touchcount condition
@@ -57,6 +59,8 @@ public class FoodManager : MonoBehaviour
                                LogManager.Instance.LogInfo("Wasn't a Food Item");
                                 var pose = arRaycastHits[0].pose;
                                 CreateFood(pose.position);
+
+                                firstObjectPlaced = true;
                                 return;
                             }
                         }
@@ -73,7 +77,7 @@ public class FoodManager : MonoBehaviour
             // end touchcount condition
         }
     }
-    
+
     private void CreateFood(Vector3 position)
     {
         // Spawns the prefab from the ScriptableObj so we can have more than one food type.
