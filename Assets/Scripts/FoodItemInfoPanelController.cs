@@ -34,6 +34,7 @@ public class FoodItemInfoPanelController : MonoBehaviour
         Title = title;
         Blurb = blurb;
         RecipeUrl = url;
+        PrepTime = prep;
         CookTime = cook;
         Serves = serves;
 

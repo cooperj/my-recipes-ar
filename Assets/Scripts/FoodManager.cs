@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.XR.ARFoundation;
 using ARLogger;
 using TMPro;
@@ -23,8 +24,13 @@ public class FoodManager : MonoBehaviour
 
     public TextMeshProUGUI uiSelected;
 
+    public EventSystem events;
+
     void Update()
     {
+        // It will turn true if hovering any UI Elements
+        if(EventSystem.current.IsPointerOverGameObject(0)) return;
+
         // touchcount condition
         if (Input.touchCount > 0)
         {
@@ -131,6 +137,7 @@ public class FoodManager : MonoBehaviour
 
     private void Start() 
     {
-            uiSelected.text = foods[foodIndex].Title;    
+        // events = GameObject.Find("EventSystem").GetComponent();
+        uiSelected.text = foods[foodIndex].Title;    
     }
 }
