@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using ARLogger;
+using TMPro;
 
 public class FoodManager : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class FoodManager : MonoBehaviour
     public int foodIndex = 0;
 
     public bool firstObjectPlaced = false;
+
+    public TextMeshProUGUI uiSelected;
 
     void Update()
     {
@@ -81,7 +84,7 @@ public class FoodManager : MonoBehaviour
     private void CreateFood(Vector3 position)
     {
         // temp
-        foodIndex = Random.Range(0, foods.Count);
+        // foodIndex = Random.Range(0, foods.Count);
 
         // Spawns the prefab from the ScriptableObj so we can have more than one food type.
         Food f = foods[foodIndex];
@@ -101,5 +104,33 @@ public class FoodManager : MonoBehaviour
         Handheld.Vibrate();
         Destroy(foodRaycast.collider.gameObject);
         LogManager.Instance.LogInfo("Food Item Deleted");
+    }
+
+    // Buttons
+    public void ClickFwd()
+    {
+        if (foodIndex == foods.Count-1)
+        {
+            Handheld.Vibrate();
+        } else {
+            foodIndex +=1;
+            uiSelected.text = foods[foodIndex].Title;
+        }
+    }
+
+    public void ClickBack()
+    {
+        if (foodIndex == 0)
+        {
+            Handheld.Vibrate();
+        } else {
+            foodIndex -=1;
+            uiSelected.text = foods[foodIndex].Title;
+        }
+    }
+
+    private void Start() 
+    {
+            uiSelected.text = foods[foodIndex].Title;    
     }
 }
