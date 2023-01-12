@@ -9,10 +9,15 @@ public class FoodItemInfoPanelController : MonoBehaviour
     public string Title;
     public string Blurb;
     public string RecipeUrl;
+    public string PrepTime;
+    public string CookTime;
+    public string Serves;
+
     public bool isOpen;
 
     public TextMeshProUGUI uiTitle;
     public TextMeshProUGUI uiBlurb;
+    public TextMeshProUGUI uiFacts;
 
     public GameObject InfoPanel;
     public FoodManager foodMgr;
@@ -24,11 +29,13 @@ public class FoodItemInfoPanelController : MonoBehaviour
     }
 
     // Allows of the Info to be updated externally
-    public void ChangeInfo(string title, string blurb, string url)
+    public void ChangeInfo(string title, string blurb, string url, string prep, string cook, string serves)
     {
         Title = title;
         Blurb = blurb;
         RecipeUrl = url;
+        CookTime = cook;
+        Serves = serves;
 
         SetInfo();
     }
@@ -37,6 +44,7 @@ public class FoodItemInfoPanelController : MonoBehaviour
     {
         uiTitle.text = Title;
         uiBlurb.text = Blurb;
+        uiFacts.text = $"Prep: {PrepTime} Cook: {CookTime} Serves: {Serves}";
     }
 
     public void ClickRecipeUrl()

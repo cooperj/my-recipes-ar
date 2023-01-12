@@ -1244,6 +1244,8 @@ MonoBehaviour:
   infoPanel: {fileID: 9145224851848901535}
   foods:
   - {fileID: 11400000, guid: 5ead10ea557bd43e985b3f62accc76a1, type: 2}
+  - {fileID: 11400000, guid: 1e69b5535cdcc45879f920f8c9ade9e2, type: 2}
+  - {fileID: 11400000, guid: ef3886cdfa9904c99b84a9c7be0151ec, type: 2}
   foodIndex: 0
   firstObjectPlaced: 0
 --- !u!4 &1059036088

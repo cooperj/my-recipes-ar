@@ -80,10 +80,13 @@ public class FoodManager : MonoBehaviour
 
     private void CreateFood(Vector3 position)
     {
+        // temp
+        foodIndex = Random.Range(0, foods.Count);
+
         // Spawns the prefab from the ScriptableObj so we can have more than one food type.
         Food f = foods[foodIndex];
         Instantiate(f.Prefab, position, Quaternion.identity);
-        infoPanel.ChangeInfo(f.Title, f.Blurb, f.RecipeUrl);
+        infoPanel.ChangeInfo(f.Title, f.Blurb, f.RecipeUrl, f.PrepTime, f.CookTime, f.ServingSize);
 
         LogManager.Instance.LogInfo("Food Item Created");
     }

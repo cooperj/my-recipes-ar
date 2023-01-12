@@ -9,4 +9,7 @@ public class Food : ScriptableObject
     public string Blurb;
     public string RecipeUrl;
     public GameObject Prefab;
+    public string PrepTime;
+    public string CookTime;
+    public string ServingSize;
 }

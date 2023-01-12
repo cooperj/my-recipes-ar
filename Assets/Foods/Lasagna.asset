@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Lasagna
   m_EditorClassIdentifier: 
   Title: Lasanga
-  Blurb: Garfield is a funny cat lol, he likes lasanga but not the cat called nermal!
-    Funny little guy :D
+  Blurb: A family home cooked classic. "It's a way of life. A sate of being one's
+    perfect achievement" -Garfield
   RecipeUrl: https://www.bbcgoodfood.com/recipes/lasagne
   Prefab: {fileID: 2884221902057482211, guid: 40a2a0815687b494cbcdb38a295bb0dd, type: 3}
+  PrepTime: 1 hour
+  CookTime: 3 hours and 10 mins
+  ServingSize: 8
